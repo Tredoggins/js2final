@@ -1,9 +1,7 @@
 <template>
   <v-app>
-    <v-navigation-drawer>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/build">Build</router-link>
-    </v-navigation-drawer>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/build">Build</router-link>
     <router-view/>
   </v-app>
 </template>
