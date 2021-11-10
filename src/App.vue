@@ -2,7 +2,7 @@
   <v-app>
     <v-navigation-drawer>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/build">Build</router-link>
     </v-navigation-drawer>
     <router-view/>
   </v-app>
