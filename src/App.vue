@@ -1,11 +1,20 @@
 <template>
   <v-app>
+    <h1>{{pageName}}</h1>
     <router-link to="/">Home</router-link> |
     <router-link to="/build">Build</router-link>
     <router-view/>
   </v-app>
 </template>
-
+<script>
+  export default{
+    computed:{
+      pageName(){
+        return this.$route.name
+      }
+    }
+  }
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
