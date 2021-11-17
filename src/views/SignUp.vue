@@ -29,8 +29,8 @@
             class="mr-4"
             @click="submit"
         >
-          Validate
-        </v-btn>
+          Sign Up
+        </v-btn><v-btn @click="$router.push('/')" class="mr-4">Sign In instead</v-btn>
       </v-form>
     </v-col>
   </v-row>
@@ -66,12 +66,13 @@ export default {
         auth.createUserWithEmailAndPassword(this.email,this.password)
             .then((r)=>{
               console.log(r);
-              db.collection('users').add({userID:r.user.uid,username:this.username,image:null})
+              db.collection('users').doc(r.user.uid).set({username:this.username,image:null})
                                                   .then(()=>{
                                                     this.$router.push("/home");
                                                   })
                                                   .catch((e)=>{
                                                     console.error(e);
+                                                    this.error=e.message;
                                                   })
               this.error='';
             })
