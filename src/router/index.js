@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import SignIn from "@/views/SignIn";
 import SignUp from "@/views/SignUp";
+import BuildDeck from "@/views/BuildDeck";
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,12 @@ const routes = [
     path:'/signup',
     name:'Sign Up',
     component: SignUp
+  },
+  {
+    path:'/build/:id',
+    name:'Edit Deck',
+    component: BuildDeck,
+    props:true
   },
 ]
 

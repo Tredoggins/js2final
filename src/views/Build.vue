@@ -3,9 +3,10 @@
     <v-col v-if="user!=null" class="align-center justify-center flex-column d-flex">
       <template v-if="coverList.length>0">
         <coverflow :cover-list="coverList" :cover-width="options.coverWidth" :cover-height="options.coverHeight" :cover-space="options.coverSpace" :width="options.width"></coverflow>
-        <v-btn rounded color="green">Edit</v-btn>
+        <v-btn rounded color="green" @click="$router.push('/build/'+coverList[options.index].id)">Edit</v-btn>
       </template>
       <br>
+<!--      <v-progress-circular indeterminate></v-progress-circular>-->
       <v-btn color="blue" fab><v-icon>mdi-plus</v-icon></v-btn>
     </v-col>
     <v-col v-else>
@@ -42,6 +43,11 @@ export default {
         coverHeight: 300
       }
     }
+  },
+  methods:{
+    getDeck(){
+      console.log(this.coverList[this.options.index])
+    },
   },
   components: {
     coverflow
