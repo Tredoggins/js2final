@@ -4,7 +4,7 @@
       <v-row>
 
       </v-row>
-      <v-row class="d-flex justify-space-between mb-6">
+      <v-row class="d-flex justify-space-between mb-1">
         <v-col class="d-flex">
 
         </v-col>
@@ -68,7 +68,6 @@
           // User is signed in.
           this.authUser=user;
           this.signedOut=false;
-          this.$router.push('/home');
 
         } else {
           // User is signed out.

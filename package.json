@@ -14,7 +14,7 @@
     "vue-coverflow": "^2.2.0",
     "vue-router": "^3.2.0",
     "vuefire": "^2.2.5",
-    "vuetify": "^2.4.0"
+    "vuetify": "^2.5.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
