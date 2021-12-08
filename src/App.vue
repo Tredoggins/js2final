@@ -2,11 +2,10 @@
   <v-app>
     <v-container>
       <v-row>
-
       </v-row>
       <v-row class="d-flex justify-space-between mb-1">
-        <v-col class="d-flex">
-
+        <v-col v-if="user!=null" class="d-flex">
+          <h3>Welcome {{user.username}}!</h3>
         </v-col>
         <v-col class="d-flex flex-column justify-center">
           <h1>{{pageName}}</h1>
@@ -31,12 +30,14 @@
 </template>
 <script>
   import {auth} from "@/config/config";
+  import {db} from "./config/config";
 
   export default{
     data:()=>({
       authUser:null,
       route:0,
       signedOut:false,
+      user:null,
     }),
     computed:{
       pageName(){
@@ -68,6 +69,9 @@
           // User is signed in.
           this.authUser=user;
           this.signedOut=false;
+          db.collection("users").doc(user.uid).get().then((r)=>{
+            this.user=r.data();
+          })
 
         } else {
           // User is signed out.

@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <h2>Cultural sublimation and dialectic nationalism</h2>
+<!--      <h2>Cultural sublimation and dialectic nationalism</h2>
       <p>
         The main theme of Wilson’s critique of textual
         postdialectic theory is the difference between sexual identity and class. Marx
@@ -30,6 +30,10 @@
         holds, we have to choose between dialectic nationalism and the modern paradigm
         of discourse. Foucault suggests the use of cultural sublimation to attack
         sexism.
+      </p>-->
+      <h2>Thank you for using CardCrafter!</h2>
+      <p>
+        CardCrafter is a web app where you can build decks for Magic the Gathering.
       </p>
     </v-col>
   </v-row>

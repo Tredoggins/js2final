@@ -5,6 +5,7 @@
         <coverflow :key="Math.random()*100000" :cover-list="coverList" :cover-width="coverWidth" :cover-height="coverHeight" :cover-space="coverSpace" :width="width" :index="index" @change="(inex)=>{this.index=inex}" :coverFalt="false"></coverflow>
         <v-btn rounded color="green" @click="$router.push('/edit/'+coverList[index].id+'/deck')">Edit</v-btn>
       </template>
+      <v-progress-circular indeterminate v-else></v-progress-circular>
       <br>
 <!--      <v-progress-circular indeterminate></v-progress-circular>-->
 
