@@ -15,7 +15,7 @@
         <v-progress-circular indeterminate v-else></v-progress-circular>
       </v-col>
       <v-col cols="1" class="d-flex align-center">
-        <v-btn fab @click="next"><v-icon>mdi-arrow-right</v-icon></v-btn>
+        <v-btn fab @click="next" :disabled="disableNext"><v-icon>mdi-arrow-right</v-icon></v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -42,6 +42,9 @@ export default {
     loading:{
       type:Boolean,
     },
+    disableNext:{
+      type:Boolean,
+    },
   },
   data:()=>({
     //currentCards:[],
@@ -53,7 +56,13 @@ export default {
       //this.setCurrentCards();
     },
     next(){
-      this.page++;
+      if(this.page===undefined){
+        this.page=1;
+      }
+      else if(this.cards.length>(this.page*6)) {
+        this.page++;
+      }
+      console.log(this.page);
       if(this.page*6>=this.cards.length){
         this.$emit('moreCards',this.page);
       }

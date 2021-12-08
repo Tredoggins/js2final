@@ -3,8 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import SignIn from "@/views/SignIn";
 import SignUp from "@/views/SignUp";
-import BuildDeck from "@/views/BuildDeck";
+import BuildDeck from "../views/BuildDeck";
 import Build from "../views/Build";
+import BuildColors from "../views/BuildColors";
 
 Vue.use(VueRouter)
 
@@ -33,7 +34,13 @@ const routes = [
     component: SignUp
   },
   {
-    path:'/build/:id',
+    path:'/edit/:id/colors',
+    name:'Edit Colors',
+    component: BuildColors,
+    props:true
+  },
+  {
+    path:'/edit/:id/deck',
     name:'Edit Deck',
     component: BuildDeck,
     props:true

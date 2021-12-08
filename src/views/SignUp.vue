@@ -65,20 +65,18 @@ export default {
       if(this.valid){
         auth.createUserWithEmailAndPassword(this.email,this.password)
             .then((r)=>{
-              console.log(r);
-              db.collection('users').doc(r.user.uid).set({username:this.username,image:null})
-                                                  .then(()=>{
-                                                    this.$router.push("/home");
-                                                  })
-                                                  .catch((e)=>{
-                                                    console.error(e);
-                                                    this.error=e.message;
-                                                  })
+              //console.log(r);
               this.error='';
+              return db.collection('users').doc(r.user.uid).set({username:this.username,image:null})
+
+            })
+            .then(()=>{
+              this.$router.push("/home");
             })
             .catch((e)=>{
+              console.error(e);
               this.error=e.message;
-            });
+            })
       }
     }
   },

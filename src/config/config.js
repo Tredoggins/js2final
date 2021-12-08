@@ -12,5 +12,6 @@ const config = {
 firebase.initializeApp(config);
 const db=firebase.firestore();
 const auth=firebase.auth();
+const storage=firebase.storage().ref();
 Vue.use(firebase);
-export {db,auth};
+export {db,auth,storage};
